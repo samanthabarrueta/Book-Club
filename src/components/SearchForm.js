@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import Button from 'react-bootstrap/Button';
 
 class SearchForm extends Component {
     
@@ -11,29 +12,25 @@ class SearchForm extends Component {
         this.setState({
             [name]: value
         });
-        console.log('name ' + name);
-        console.log('value ' + value)
     };
 
     handleFormSubmit = event => {
         event.preventDefault();
-        console.log(this.state)
-    };
+        console.log(this.state.searchValue)
+    }; 
 
     render() {
         return (
             <div>
-                <form className='search'>
+                <form className='searchForm'>
                     <input
-                    onChange={this.handleInputChange}
-                    value={this.state.searchValue}
-                    name='searchValue'
-                    type='text'
-                    className='form-control'
-                    placeholder='Search For a Book'
-                    id='search'
+                        value={this.state.searchValue}
+                        name='searchValue'
+                        onChange={this.handleInputChange}
+                        type='text'
+                        placeholder='Search For a Book'
                     /> 
-                    <button onClick={this.handleFormSubmit}>Search</button>
+                    <Button variant='primary' onClick={this.handleFormSubmit}>Search</Button>
                 </form>
             </div>  
         );
