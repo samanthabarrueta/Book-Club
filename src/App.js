@@ -1,10 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SearchForm from './components/SearchForm';
+import ResultsContainer from './components/ResultsContainer';
 
 const App = () => {
     return ( 
-        <SearchForm />    
+        <ResultsContainer />    
     );
 };
 
