@@ -1,9 +1,26 @@
 import React, { Component} from 'react';
 import SearchForm from './SearchForm';
+import Book from '../../model/Book';
 
 class ResultsContainer extends Component {
     state = {
-        search: ''
+        search: '',
+        results: []
+    };
+
+    componentDidMount() {
+        this.search('flower');
+    };
+
+    async search(query) {
+        try {
+            const bookAPI = new Book();
+            await bookAPI.search(query);
+            this.setState({ results: bookAPI.results });
+            console.log(this.state)
+        } catch(error) {
+            console.log(error);
+        };
     };
 
     handleInputChange = event => {
@@ -15,13 +32,17 @@ class ResultsContainer extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        console.log(this.state.searchValue)
+        console.log(this.state.search)
     }; 
 
     render() {
         return (
             <div>
-                <SearchForm />
+                <SearchForm 
+                    value={this.state.search}
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
+                />
             </div>  
         );
     };

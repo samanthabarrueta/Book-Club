@@ -1,10 +1,9 @@
-import React, { Component} from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-class SearchForm extends Component {
-    
+class SearchForm extends React.Component {   
     state = {
-        searchValue: ''
+        search: ''
     };
 
     handleInputChange = event => {
@@ -16,7 +15,7 @@ class SearchForm extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        console.log(this.state.searchValue)
+        console.log(this.state.search)
     }; 
 
     render() {
@@ -24,8 +23,8 @@ class SearchForm extends Component {
             <div>
                 <form className='searchForm'>
                     <input
-                        value={this.state.searchValue}
-                        name='searchValue'
+                        value={this.state.search}
+                        name='search'
                         onChange={this.handleInputChange}
                         type='text'
                         placeholder='Search For a Book'
