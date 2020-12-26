@@ -1,11 +1,8 @@
-import React from 'react';
-
-class BookResult extends React.Component {
+class BookResult {
     constructor(result) {
-        super();
-        result = {
+        this._result = {
             id: result.id,
-            title: result.id,
+            title: result.title,
             authors: result.authors,
             description: result.description,
             image: result.image,
