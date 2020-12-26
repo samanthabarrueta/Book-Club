@@ -1,9 +1,8 @@
-import React from 'react';
+import axios from 'axios';
 import BookResult from './BookResult';
 
-class Book  extends React.Component {
+class Book {
     constructor() {
-        super();
         this._results = [];
     };
 
@@ -12,9 +11,9 @@ class Book  extends React.Component {
     };
     
     async search(query) {
-        fetch(`${process.env.REACT_APP_BASEURL}${query}&${process.env.REACT_APP_APIKEY}`)
-            .then((res) => res.json())
-            .then((data) => console.log(data))      
+        const result = await axios.get(`${process.env.REACT_APP_BASEURL}${query}&${process.env.REACT_APP_APIKEY}`);
+        this._results = result.data.items;
+        console.log(this._results);
     };
 };
 
