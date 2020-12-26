@@ -2,6 +2,7 @@ import React from 'react';
 
 class BookResult extends React.Component {
     constructor(result) {
+        super();
         result = {
             id: result.id,
             title: result.id,
