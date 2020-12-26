@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
-import SearchForm from './SearchForm';
 import Book from '../../model/Book';
+import SearchForm from './SearchForm';
 import ResultCard from '../ResultsContainer/ResultCard';
 
 class ResultsContainer extends Component {
@@ -17,8 +17,8 @@ class ResultsContainer extends Component {
         try {
             const bookAPI = new Book();
             await bookAPI.search(query);
-            this.setState({ results: bookAPI.results });
-            console.log(this.state.results)
+            this.setState({ search: query, results: bookAPI.results });
+            console.log(this.state)
         } catch(error) {
             console.log(error);
         };
@@ -33,7 +33,9 @@ class ResultsContainer extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        console.log(this.state.search)
+        const query = this.state.search;
+        this.search(query)
+        console.log(this.state)
     }; 
 
     render() {
