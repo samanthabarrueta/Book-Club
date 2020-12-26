@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import SearchForm from './SearchForm';
 import Book from '../../model/Book';
+import ResultCard from '../ResultsContainer/ResultCard';
 
 class ResultsContainer extends Component {
     state = {
@@ -17,7 +18,7 @@ class ResultsContainer extends Component {
             const bookAPI = new Book();
             await bookAPI.search(query);
             this.setState({ results: bookAPI.results });
-            console.log(this.state)
+            console.log(this.state.results)
         } catch(error) {
             console.log(error);
         };
@@ -43,6 +44,13 @@ class ResultsContainer extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
+                {this.state.results.map(result => <ResultCard key = {result.id}
+                    title = {result.title}
+                    image = {result.image}
+                    authors = {result.authors}
+                    description = {result.description}
+                    link = {result.link}
+                />)}
             </div>  
         );
     };
