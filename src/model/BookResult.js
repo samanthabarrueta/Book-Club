@@ -2,11 +2,11 @@ class BookResult {
     constructor(result) {
         this._result = {
             id: result.id,
-            title: result.title,
-            authors: result.authors,
-            description: result.description,
-            image: result.image,
-            link: result.link
+            title: result.volumeInfo.title,
+            authors: result.volumeInfo.authors,
+            description: result.volumeInfo.description,
+            image: result.volumeInfo.imageLinks.thumbnail,
+            link: result.selfLink
         };
     };
 
