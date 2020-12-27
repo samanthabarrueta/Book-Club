@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import Book from '../../model/Book';
 import SearchForm from './SearchForm';
 import ResultCard from '../ResultsContainer/ResultCard';
+import CardGroup from 'react-bootstrap/CardGroup';
 
 class ResultsContainer extends Component {
     state = {
@@ -46,16 +47,21 @@ class ResultsContainer extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
-                {this.state.results.map(result => <ResultCard key = {result.id}
+                <CardGroup>
+                {this.state.results.map(result => (
+                    <ResultCard key = {result.id}
                     title = {result.title}
                     image = {result.image}
                     authors = {result.authors}
                     description = {result.description}
                     link = {result.link}
-                />)}
+                    />))
+                }
+                </CardGroup>
             </div>  
         );
     };
 };
 
-export default ResultsContainer;
+export default ResultsContainer; 
+                
