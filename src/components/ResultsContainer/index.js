@@ -1,8 +1,7 @@
 import React, { Component} from 'react';
 import Book from '../../model/Book';
 import SearchForm from './SearchForm';
-import ResultCard from '../ResultsContainer/ResultCard';
-import CardGroup from 'react-bootstrap/CardGroup';
+import ResultCard from './ResultCard';
 
 class ResultsContainer extends Component {
     state = {
@@ -47,7 +46,6 @@ class ResultsContainer extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
-                <CardGroup>
                 {this.state.results.map(result => (
                     <ResultCard key = {result.id}
                     title = {result.title}
@@ -57,7 +55,6 @@ class ResultsContainer extends Component {
                     link = {result.link}
                     />))
                 }
-                </CardGroup>
             </div>  
         );
     };
