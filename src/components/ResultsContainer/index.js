@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import Book from '../../model/Book';
-import SearchForm from './SearchForm';
+import SearchForm from '../SearchForm';
 import ResultCard from './ResultCard';
 
 class ResultsContainer extends Component {
