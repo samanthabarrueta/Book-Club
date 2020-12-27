@@ -6,7 +6,7 @@ class BookResult {
             authors: result.volumeInfo.authors,
             description: result.volumeInfo.description,
             image: result.volumeInfo.imageLinks.thumbnail,
-            link: result.selfLink
+            link: result.volumeInfo.infoLink
         };
     };
 
