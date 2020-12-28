@@ -17,7 +17,7 @@ class ResultsContainer extends Component {
         try {
             const bookAPI = new Book();
             await bookAPI.search(query);
-            this.setState({ search: query, results: bookAPI.results });
+            this.setState({ search: '', results: bookAPI.results });
             console.log(this.state)
         } catch(error) {
             console.log(error);
@@ -35,7 +35,6 @@ class ResultsContainer extends Component {
         event.preventDefault();
         const query = this.state.search;
         this.search(query)
-        console.log(this.state)
     }; 
 
     render() {
