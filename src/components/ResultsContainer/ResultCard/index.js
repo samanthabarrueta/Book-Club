@@ -10,7 +10,7 @@ const ResultCard = (props) => {
             <Card>
                 <Row>
                     <Col lg={2}>
-                        <img src={props.image} />
+                        <img src={props.image} alt='Book Cover' />
                     </Col>
                     <Col lg={10}>
                         <h1>{props.title}</h1>
