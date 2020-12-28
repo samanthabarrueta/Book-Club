@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style.css'
+import './style.css';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,13 +10,13 @@ const ResultCard = (props) => {
             <Card>
                 <Row>
                     <Col lg={2}>
-                        <img src={props.image} className={styles.img} />
+                        <img src={props.image} />
                     </Col>
                     <Col lg={10}>
                         <h1>{props.title}</h1>
                         <strong>Authors:</strong> {props.authors}
                         <p>{props.description}</p> 
-                        <a href={props.link}>Find on Google Books</a>
+                        <a href={props.link} className='text-muted'>Find on Google Books</a>
                     </Col>
                 </Row>
             </Card>

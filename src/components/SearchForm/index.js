@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -8,7 +9,7 @@ const SearchForm = (props) => {
     return (
         <div className='searchForm'>
             <Row>
-                <Col>
+                <Col med={10}>
                     <Form>
                         <Form.Group controlId='searchForm'>
                             <Form.Control 
@@ -21,7 +22,7 @@ const SearchForm = (props) => {
                         </Form.Group>
                     </Form>
                 </Col>
-                <Col>
+                <Col med={2}>
                     <Button onClick={props.handleFormSubmit}>
                         Search
                     </Button>

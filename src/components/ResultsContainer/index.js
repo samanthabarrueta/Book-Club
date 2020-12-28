@@ -35,6 +35,8 @@ class ResultsContainer extends Component {
         event.preventDefault();
         const query = this.state.search;
         this.search(query)
+        this.setState({ search: query });
+        console.log(this.state)
     }; 
 
     render() {
